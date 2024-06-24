@@ -23,6 +23,27 @@ Audible fails for some reason.
 * mp4art used to add cover art to m4a and m4b files. Optional
 * mediainfo used to add additional media tags like narrator. Optional
 
+## Docker Install
+1. Clone the repository.
+    ```
+    git clone 
+    ```
+
+2. If you have already configured audible-cli, then copy the ~/.audible directory to the cloned repository's location.
+   ```
+   cd /path/to/repository/
+   cp -r ~/.audible/ . 
+   ```
+
+3. Build the docker image.
+   ```
+   bash build_docker.sh
+   ```
+4. Run the docker container.
+   ```
+   bash run_docker.sh
+   ```
+
 ## Usage(s)
 ```
 bash AAXtoMP3 [-f|--flac] [-o|--opus] [-a|--aac] [-s|--single] [--level <COMPRESSIONLEVEL>] [-c|--chaptered] [-e:mp3] [-e:m4a] [-e:m4b] [-A|--authcode <AUTHCODE>] [-n|--no-clobber] [-t|--target_dir <PATH>] [-C|--complete_dir <PATH>] [-V|--validate] [--use-audible-cli-data]] [-d|--debug] [-h|--help] [--continue <CHAPTERNUMBER>] <AAX/AAXC INPUT_FILES>...
